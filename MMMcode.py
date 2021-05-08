@@ -14,7 +14,7 @@ with open("Height-Weight.csv", newline="") as f:
 file_data.pop(0)
 new_data = []
 for i in range(len(file_data)):
-    n_num = file_data[i][1]
+    n_num = file_data[i][2]
     new_data.append(float(n_num))
 
 #FINDING THE MEAN
@@ -42,17 +42,35 @@ print("Median is: ", median)
 #FINDING THE MODE
 data = Counter(new_data)
 mode_data_range = {
-    "50-60":0,
-    "60-70":0,
-    "70-80":0,
+    "85-95":0,
+    "95-105":0,
+    "105-115":0,
+    "115-125":0,
+    "125-135":0,
+    "135-145":0,
+    "145-155":0,
+    "155-165":0,
+    "165-175":0,
 }
 for height, occurence in data.items():
-    if 50 < float(height) < 60:
-        mode_data_range["50-60"] += occurence
-    elif 60 < float(height) < 70:
-        mode_data_range["60-70"] += occurence
-    elif 50 < float(height) < 60:
-        mode_data_range["70-80"] += occurence
+    if 85 < float(height) < 95:
+        mode_data_range["85-95"] += occurence
+    elif 95 < float(height) < 105:
+        mode_data_range["95-105"] += occurence
+    elif 105 < float(height) < 115:
+        mode_data_range["105-115"] += occurence
+    elif 115 < float(height) < 125:
+        mode_data_range["115-125"] += occurence
+    elif 125 < float(height) < 135:
+        mode_data_range["125-135"] += occurence
+    elif 135 < float(height) < 145:
+        mode_data_range["135-145"] += occurence
+    elif 145 < float(height) < 155:
+        mode_data_range["145-155"] += occurence
+    elif 155 < float(height) < 165:
+        mode_data_range["155-165"] += occurence
+    elif 165 < float(height) < 175:
+        mode_data_range["165-175"] += occurence
 
 mode_range, mode_occurence = 0, 0
 for range, occurence in mode_data_range.items():
